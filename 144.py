@@ -39,6 +39,25 @@ def preorder_traversal(root: Optional[TreeNode]) -> List[int]:
     return result
 
 
+def preorder_traversal_recursive(root: Optional[TreeNode]) -> List[int]:
+    result: List[int] = []
+
+    if not root:
+        return result
+
+    def traversal(node: TreeNode) -> None:
+        if not node:
+            return
+
+        result.append(node.val)
+        traversal(node.left)
+        traversal(node.right)
+
+    traversal(root)
+
+    return result
+
+
 if __name__ == '__main__':
     tree = TreeNode(1, None, TreeNode(2, TreeNode(3)))
     assert preorder_traversal(tree) == [1, 2, 3]
@@ -54,3 +73,6 @@ if __name__ == '__main__':
 
     tree = TreeNode(1, None, TreeNode(2))
     assert preorder_traversal(tree) == [1, 2]
+
+    tree = TreeNode(1, None, TreeNode(2, TreeNode(3)))
+    assert preorder_traversal_recursive(tree) == [1, 2, 3]
