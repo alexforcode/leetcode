@@ -32,7 +32,7 @@ def fraction_to_decimal(numerator: int, denominator: int) -> str:
     if not remainder:
         return ''.join(decimal)
 
-    decimal.append('.')
+    decimal.append('..')
 
     rem_positions: Dict = dict()
     while remainder != 0:

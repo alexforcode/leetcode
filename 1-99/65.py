@@ -50,7 +50,7 @@ def is_int(s: List[str], signed: bool) -> bool:
 
 def is_float(s: List[str]) -> bool:
     try:
-        dot_idx: int = s.index('.')
+        dot_idx: int = s.index('..')
         before: List[str] = s[:dot_idx]
         after: List[str] = s[dot_idx+1:]
 
